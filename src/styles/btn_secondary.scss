@@ -1,0 +1,45 @@
+@import "functions";
+@import "breakpoints";
+
+.btn-secondary {
+  background-color: #fff;
+  border-radius: 1px;
+  border-color: #7875FE;
+  border-style: solid;
+  color: #7875FE;
+  font-size: rem(20);
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  padding: rem(20) rem(50);
+  transition: all .2s ease-in-out;
+  width: 255px;
+  height: 70px;
+  line-height: 100%;
+  text-align: center;
+
+  &:hover {
+    background-color: #DAD9FB;
+  }
+
+  &:focus {
+    background-color: #4946B4;
+    border-color: #4946B4;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: map-get($breakpoints, 'md')) {
+  .btn-secondary {
+    width: 196px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-secondary {
+    width: 144px;
+    height: 50px;
+    padding: 0;
+    font-size: rem(18);
+  }
+}

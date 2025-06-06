@@ -1,0 +1,294 @@
+@import "functions";
+// Ваша функция rem
+@import "breakpoints";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-block {
+  position: relative;
+  overflow: hidden;
+
+  &__section-one {
+    position: relative;
+    z-index: 0;
+  }
+
+  &__section-two {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__simple-image-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 36%;
+    right: 20%;
+    transform: translateY(-50%) translateZ(0);
+    -webkit-backface-visibility: hidden;
+
+    width: 35vw;
+    max-width: rem(500);
+    min-width: rem(200);
+    height: auto;
+    text-align: center;
+  }
+
+  &__simple-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 4300px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 36%;
+    }
+  }
+}
+
+@media (max-width: 4200px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 36%;
+    }
+  }
+}
+
+@media (max-width: 3900px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 35%;
+    }
+  }
+}
+
+
+@media (max-width: 3700px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 34%;
+    }
+  }
+}
+
+
+@media (max-width: 3500px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 33%;
+    }
+  }
+}
+
+
+@media (max-width: 3300px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 32%;
+    }
+  }
+}
+
+@media (max-width: 3200px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 31%;
+    }
+  }
+}
+
+
+@media (max-width: 3000px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 30%;
+    }
+  }
+}
+
+@media (max-width: 2900px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 29%;
+    }
+  }
+}
+
+@media (max-width: 2800px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 28%;
+    }
+  }
+}
+
+@media (max-width: 2700px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 27%;
+    }
+  }
+}
+
+@media (max-width: 2500px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 26%;
+    }
+  }
+}
+
+@media (max-width: 2400px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 24%;
+    }
+  }
+}
+
+@media (max-width: 2300px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 23%;
+    }
+  }
+}
+
+@media (max-width: 2200px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 22%;
+    }
+  }
+}
+
+@media (max-width: 2100px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 21%;
+    }
+  }
+}
+
+@media (max-width: 2000px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 20%;
+    }
+  }
+}
+
+@media (max-width: 1900px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 18%;
+    }
+  }
+}
+
+@media (max-width: 1800px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 16%;
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 14%;
+    }
+  }
+
+}
+
+@media (max-width: 1600px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 12%;
+    }
+  }
+
+}
+
+@media (max-width: 1500px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 36%;
+      right: 8%;
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, xxl)) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 38%;
+      right: 12%;
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, xl)) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 26%;
+      right: 14%;
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, lg)) {
+  .hero-block {
+    &__simple-image-wrapper {
+      width: 30vw;
+      top: 20%;
+      right: 12%;
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, md)) {
+  .hero-block {
+    &__simple-image-wrapper {
+      top: 16%;
+      right: 8%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-block {
+    &__simple-image-wrapper {
+      display: none;
+    }
+  }
+}

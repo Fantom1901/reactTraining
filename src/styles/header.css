@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #fff;
+  padding: 0.9375rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header hr {
+  margin: 0;
+}
+.header .my-custom-navbar-header .header-logo {
+  height: 2.5rem;
+  width: auto;
+}
+.header .my-custom-navbar-header .header-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.header .my-custom-navbar-header .header-toggler .navbar-toggler-icon {
+  display: block;
+  width: 100%;
+  height: 0.1875rem;
+  background-color: #333;
+  border-radius: 0.125rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.header .my-custom-navbar-header .header-toggler:active .navbar-toggler-icon:nth-child(1) {
+  transform: translateY(0.5rem) rotate(45deg);
+}
+.header .my-custom-navbar-header .header-toggler:active .navbar-toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+.header .my-custom-navbar-header .header-toggler:active .navbar-toggler-icon:nth-child(3) {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
+.header .my-custom-navbar-header .header-toggler:focus .header .my-custom-navbar-header .header-toggler:hover .header .my-custom-navbar-header .header-toggler:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+@media (min-width: 992px) {
+  .header .my-custom-navbar-header .header-nav-desktop {
+    flex-basis: 80%;
+    max-width: 80%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 1200px) {
+  .header .my-custom-navbar-header .header-nav-desktop {
+    flex-basis: 85%;
+    max-width: 85%;
+  }
+}
+@media (min-width: 1400px) {
+  .header .my-custom-navbar-header .header-nav-desktop {
+    flex-basis: 90%;
+    max-width: 90%;
+  }
+}
+.header .my-custom-navbar-header .header-nav-main {
+  gap: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.header .my-custom-navbar-header .header-nav-main .header-nav-link {
+  padding: 0;
+  color: #4C5866;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+.header .my-custom-navbar-header .header-nav-iconGroup {
+  padding: 0;
+  gap: 1.875rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1.25rem;
+}
+.header .my-custom-navbar-header .header-collapse-menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+  z-index: 998;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, top 0.3s ease-out;
+  order: 3;
+  align-self: flex-start;
+}
+.header .my-custom-navbar-header .header-collapse-menu.show {
+  max-height: 31.25rem;
+  opacity: 1;
+  top: 5rem;
+  transition: max-height 0.5s ease-in, opacity 0.5s ease-in, top 0.5s ease-in;
+}
+.header .my-custom-navbar-header .header-collapse-menu .header-nav-main-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.header .my-custom-navbar-header .header-collapse-menu .header-nav-main-mobile .header-nav-link {
+  padding: 0.625rem 0;
+  color: #4C5866;
+  font-weight: 400;
+  font-size: 1.125rem;
+  width: 100%;
+}
+.header .my-custom-navbar-header .header-collapse-menu .header-nav-iconGroup-mobile {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+  margin-top: 0.9375rem;
+  border-top: 1px solid #eee;
+  padding-top: 0.9375rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+@media (max-width: 991.98px) {
+  .header .container-fluid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header .container-fluid .header-brand {
+    order: 1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.9375rem;
+    align-self: center;
+  }
+  .header .container-fluid .header-tog {
+    order: 2;
+    align-self: flex-start;
+    margin-bottom: 0.625rem;
+  }
+}
+
+.container-fluid {
+  margin-top: 0.9375rem;
+}
+
+/*# sourceMappingURL=header.css.map */

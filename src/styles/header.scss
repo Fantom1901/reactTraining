@@ -1,0 +1,188 @@
+@import "./functions";
+@import "./breakpoints";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #fff;
+  padding: rem(15) 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  hr {
+    margin: 0;
+  }
+
+  .my-custom-navbar-header {
+
+    .header-logo {
+      height: rem(40);
+      width: auto;
+    }
+
+    // --- Стили для кнопки-переключателя (гамбургера) ---
+    .header-toggler {
+     border: none;
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+      cursor: pointer;
+      padding: rem(10);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: rem(50);
+      height: rem(50);
+      .navbar-toggler-icon{
+        display: block;
+        width: 100%;
+        height: rem(3);
+        background-color: #333;
+        border-radius: rem(2);
+        transition: transform .3s ease, opacity .3s ease;
+      }
+      &:active {
+        .navbar-toggler-icon:nth-child(1) {
+          transform: translateY(rem(8)) rotate(45deg);
+        }
+        .navbar-toggler-icon:nth-child(2) {
+          opacity: 0;
+        }
+        .navbar-toggler-icon:nth-child(3) {
+          transform: translateY(rem(-8)) rotate(-45deg);
+        }
+      }
+      &:focus &:hover &:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    // --- Десктопная навигация ---
+    .header-nav-desktop {
+      // Настройка ширины для LG
+      @media (min-width: map-get($breakpoints, 'lg')) {
+        flex-basis: 80%; // Начиная с LG, навигация 80%
+        max-width: 80%;
+        display: flex; // Важно, чтобы он стал flex-контейнером на десктопе
+        justify-content: flex-end; // Выравниваем содержимое вправо
+      }
+      @media (min-width: map-get($breakpoints, 'xl')) {
+        flex-basis: 85%; // На XL, навигация 85%
+        max-width: 85%;
+      }
+      @media (min-width: map-get($breakpoints, 'xxl')) {
+        flex-basis: 90%; // На XXL, навигация 90%
+        max-width: 90%;
+      }
+    }
+
+
+    .header-nav-main { // Десктопная навигация
+      gap: rem(60);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; // Выравнивает навигацию вправо
+      width: 100%; // Чтобы justify-content работал корректно
+
+      .header-nav-link {
+        padding: 0;
+        color: #4C5866;
+        font-weight: 400;
+        font-size: rem(20);
+      }
+    }
+
+    .header-nav-iconGroup { // Десктопные иконки
+      padding: 0;
+      gap: rem(30);
+      display: flex;
+      align-items: center;
+      margin-left: rem(20); // Отступ от последнего пункта меню
+    }
+
+    // --- Мобильное коллапс-меню ---
+    .header-collapse-menu {
+      // Скрыто по умолчанию
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0; // Начальная позиция выше экрана
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: rem(20);
+      z-index: 998; // Под кнопкой-бургером
+      overflow: hidden; // Скрываем содержимое, которое выходит за границы
+      max-height: 0; // Изначально скрыто, высота 0
+      opacity: 0; // Прозрачность 0
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out, top 0.3s ease-out; // Анимация
+
+      // Мобильные порядковые номера и выравнивание
+      order: 3; // Под логотипом и переключателем
+      align-self: flex-start; // Выравнивание по левому краю
+
+      &.show { // Когда меню активно
+        max-height: rem(500); // Достаточно большая высота, чтобы вместить контент
+        opacity: 1;
+        top: rem(80); // Позиция под хедером
+        transition: max-height 0.5s ease-in, opacity 0.5s ease-in, top 0.5s ease-in;
+      }
+
+      .header-nav-main-mobile { // Мобильная навигация внутри коллапса
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        .header-nav-link {
+          padding: rem(10) 0;
+          color: #4C5866;
+          font-weight: 400;
+          font-size: rem(18); // Чуть меньше для мобильных
+          width: 100%;
+        }
+      }
+
+      .header-nav-iconGroup-mobile { // Мобильные иконки внутри коллапса
+        display: flex;
+        align-items: center;
+        gap: rem(30);
+        margin-top: rem(15);
+        border-top: 1px solid #eee;
+        padding-top: rem(15);
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  // --- Общие стили для расположения элементов в контейнере Navbar на мобильных ---
+  @media (max-width: map-get($breakpoints, 'lg') - 0.02px) {
+    .container-fluid {
+      flex-direction: column; // Элементы в столбец
+      align-items: flex-start; // Выравниваем по левому краю
+
+      .header-brand {
+        order: 1; // Логотип наверх
+        width: 100%;
+        text-align: center;
+        margin-bottom: rem(15);
+        align-self: center; // Центрируем логотип по горизонтали в колонке
+      }
+
+      .header-tog {
+        order: 2; // Гамбургер под логотипом
+        align-self: flex-start; // Прижимаем к левому краю
+        margin-bottom: rem(10);
+      }
+    }
+  }
+}
+
+.container-fluid { // Эта линия под навбаром
+  margin-top: rem(15);
+}
